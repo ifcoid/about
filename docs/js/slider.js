@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const showSlide = (index) => {
         slides.forEach((slide, i) => {
-            slide.classList.toggle('is-active', i === index);
+            slide.classList.remove('is-active');
+            if (i === index) {
+                slide.classList.add('is-active');
+            }
         });
     };
 

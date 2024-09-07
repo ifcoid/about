@@ -1,7 +1,6 @@
 .slide {
     display: none;
-  }
-  .slide.is-active {
+}
+.slide.is-active {
     display: block;
-  }
-  
+}
