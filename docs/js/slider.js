@@ -36,5 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
           prevEl: '.swiper-button-prev',
         },
         loop: true, // Enables looping
+        autoplay: {
+            delay: 3000, // Slide changes every 3 seconds (3000 milliseconds)
+            disableOnInteraction: false, // Keeps autoplay even after user interaction
+          },
       });
 });
