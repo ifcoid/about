@@ -29,4 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Auto-slide every 5 seconds
     setInterval(next, 5000);
+    //testimonial pake swiper
+    var swiper = new Swiper('.swiper-container', {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        loop: true, // Enables looping
+      });
 });
