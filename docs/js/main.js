@@ -1,40 +1,28 @@
 // Burger menus
-document.addEventListener('DOMContentLoaded', function() {
-    // open
-    const burger = document.querySelectorAll('.navbar-menu-open');
-    const menu = document.querySelectorAll('.navbar-side');
+document.addEventListener('DOMContentLoaded', function () {
+    // Select elements
+    const burgers = document.querySelectorAll('.navbar-menu-open');
+    const menus = document.querySelectorAll('.navbar-side');
+    const closes = document.querySelectorAll('.navbar-close');
+    const backdrops = document.querySelectorAll('.navbar-backdrop');
 
-    if (burger.length && menu.length) {
-        for (var i = 0; i < burger.length; i++) {
-            burger[i].addEventListener('click', function() {
-                for (var j = 0; j < menu.length; j++) {
-                    menu[j].classList.toggle('is-hidden');
-                }
-            });
-        }
-    }
+    // Toggle menu visibility
+    const toggleMenuVisibility = () => {
+        menus.forEach(menu => menu.classList.toggle('is-hidden'));
+    };
 
-    // close
-    const close = document.querySelectorAll('.navbar-close');
-    const backdrop = document.querySelectorAll('.navbar-backdrop');
+    // Open menu on burger click
+    burgers.forEach(burger => {
+        burger.addEventListener('click', toggleMenuVisibility);
+    });
 
-    if (close.length) {
-        for (var i = 0; i < close.length; i++) {
-            close[i].addEventListener('click', function() {
-                for (var j = 0; j < menu.length; j++) {
-                    menu[j].classList.toggle('is-hidden');
-                }
-            });
-        }
-    }
+    // Close menu on close button click
+    closes.forEach(close => {
+        close.addEventListener('click', toggleMenuVisibility);
+    });
 
-    if (backdrop.length) {
-        for (var i = 0; i < backdrop.length; i++) {
-            backdrop[i].addEventListener('click', function() {
-                for (var j = 0; j < menu.length; j++) {
-                    menu[j].classList.toggle('is-hidden');
-                }
-            });
-        }
-    }
+    // Close menu on backdrop click
+    backdrops.forEach(backdrop => {
+        backdrop.addEventListener('click', toggleMenuVisibility);
+    });
 });
