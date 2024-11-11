@@ -1,44 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Slide elements
     const slides = document.querySelectorAll('.slide');
-    const nextSlide = document.getElementById('nextSlide');
-    const prevSlide = document.getElementById('prevSlide');
+    const nextSlideButton = document.getElementById('nextSlide');
+    const prevSlideButton = document.getElementById('prevSlide');
     let currentSlide = 0;
 
+    // Show slide at specific index
     const showSlide = (index) => {
         slides.forEach((slide, i) => {
-            slide.classList.remove('is-active');
-            if (i === index) {
-                slide.classList.add('is-active');
-            }
+            slide.classList.toggle('is-active', i === index);
         });
     };
 
-    const next = () => {
+    // Navigate to the next slide
+    const nextSlide = () => {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
     };
 
-    const prev = () => {
+    // Navigate to the previous slide
+    const prevSlide = () => {
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         showSlide(currentSlide);
     };
 
-    // Event listeners for buttons
-    nextSlide.addEventListener('click', next);
-    prevSlide.addEventListener('click', prev);
+    // Add event listeners if elements exist
+    if (nextSlideButton) {
+        nextSlideButton.addEventListener('click', nextSlide);
+    }
+    if (prevSlideButton) {
+        prevSlideButton.addEventListener('click', prevSlide);
+    }
 
     // Auto-slide every 5 seconds
-    setInterval(next, 5000);
-    //testimonial pake swiper
-    var swiper = new Swiper('.swiper-container', {
+    const autoSlideInterval = setInterval(nextSlide, 5000);
+
+    // Pause auto-slide on hover, resume on mouse leave
+    slides.forEach(slide => {
+        slide.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        slide.addEventListener('mouseleave', () => setInterval(nextSlide, 5000));
+    });
+
+    // Initialize Swiper for testimonials
+    const swiper = new Swiper('.swiper-container', {
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
-        loop: true, // Enables looping
+        loop: true,
         autoplay: {
-            delay: 3000, // Slide changes every 3 seconds (3000 milliseconds)
-            disableOnInteraction: false, // Keeps autoplay even after user interaction
-          },
-      });
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+    });
 });
