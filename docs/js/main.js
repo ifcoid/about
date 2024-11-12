@@ -1,27 +1,27 @@
-// Burger menus
-document.addEventListener('DOMContentLoaded', function () {
-    // Select elements
+// Menu Burger
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleksi elemen
     const burgers = document.querySelectorAll('.navbar-menu-open');
     const menus = document.querySelectorAll('.navbar-side');
     const closes = document.querySelectorAll('.navbar-close');
     const backdrops = document.querySelectorAll('.navbar-backdrop');
 
-    // Toggle menu visibility
+    // Fungsi toggle visibility menu
     const toggleMenuVisibility = () => {
         menus.forEach(menu => menu.classList.toggle('is-hidden'));
     };
 
-    // Open menu on burger click
+    // Buka menu ketika tombol burger diklik
     burgers.forEach(burger => {
         burger.addEventListener('click', toggleMenuVisibility);
     });
 
-    // Close menu on close button click
+    // Tutup menu ketika tombol close diklik
     closes.forEach(close => {
         close.addEventListener('click', toggleMenuVisibility);
     });
 
-    // Close menu on backdrop click
+    // Tutup menu ketika backdrop diklik
     backdrops.forEach(backdrop => {
         backdrop.addEventListener('click', toggleMenuVisibility);
     });
