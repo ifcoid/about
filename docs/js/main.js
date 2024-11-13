@@ -25,4 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
     backdrops.forEach(backdrop => {
         backdrop.addEventListener('click', toggleMenuVisibility);
     });
+    
 });
