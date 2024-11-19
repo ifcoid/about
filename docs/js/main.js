@@ -27,3 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
 });
+// Mendapatkan elemen popup dan tombol close
+const popup = document.querySelector('.popup');
+const closeButton = document.querySelector('.close-button');
+
+// Fungsi untuk membuka popup
+function openPopup() {
+    popup.classList.add('active');
+}
+
+// Fungsi untuk menutup popup
+function closePopup() {
+    popup.classList.remove('active');
+}
+
+// Menutup popup saat tombol close diklik
+closeButton.addEventListener('click', closePopup);
+
+// Menutup popup saat menekan tombol Escape
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closePopup();
+    }
+});
