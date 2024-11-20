@@ -1,14 +1,16 @@
 /*! Theme created with the Shuffle Editor (https://shuffle.dev) */
 
+// Importing necessary variables and extensions
 @import "zeus-extension/variables.scss";
 @import "zeus-extension/maxmaxmax/variables.scss";
 @import "../../node_modules/bulma/sass/utilities/initial-variables.sass";
 @import "../../node_modules/bulma/sass/utilities/functions.sass";
 @import "../../node_modules/bulma/sass/utilities/derived-variables.sass";
 
-// Your variables
+// Import your custom variables
 @import 'custom-variables';
 
+// Inverting colors for better contrast
 $orange-invert   : findColorInvert($orange);
 $yellow-invert   : findColorInvert($yellow);
 $green-invert    : findColorInvert($green);
@@ -18,6 +20,7 @@ $blue-invert     : findColorInvert($blue);
 $purple-invert   : findColorInvert($purple);
 $red-invert      : findColorInvert($red);
 
+// Primary and info color variations
 $primary-invert  : findColorInvert($primary);
 $primary-light   : findLightColor($primary);
 $primary-dark    : findDarkColor($primary);
@@ -36,14 +39,41 @@ $danger-dark     : findDarkColor($danger);
 $light-invert    : findColorInvert($light);
 $dark-invert     : findColorInvert($dark);
 
-$link-invert       : findColorInvert($link);
-$link-light        : findLightColor($link);
-$link-dark         : findDarkColor($link);
+// Link color variations
+$link-invert     : findColorInvert($link);
+$link-light      : findLightColor($link);
+$link-dark       : findDarkColor($link);
 
-$colors: mergeColorMaps(("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert, $primary-light, $primary-dark), "link": ($link, $link-invert, $link-light, $link-dark), "info": ($info, $info-invert, $info-light, $info-dark), "success": ($success, $success-invert, $success-light, $success-dark), "warning": ($warning, $warning-invert, $warning-light, $warning-dark), "danger": ($danger, $danger-invert, $danger-light, $danger-dark)), $custom-colors);
-$shades: mergeColorMaps(("black-bis": $black-bis, "black-ter": $black-ter, "grey-darker": $grey-darker, "grey-dark": $grey-dark, "grey": $grey, "grey-light": $grey-light, "grey-lighter": $grey-lighter, "white-ter": $white-ter, "white-bis": $white-bis), $custom-shades);
+// Merging color maps for easy access
+$colors: mergeColorMaps((
+  "white": ($white, $black),
+  "black": ($black, $white),
+  "light": ($light, $light-invert),
+  "dark": ($dark, $dark-invert),
+  "primary": ($primary, $primary-invert, $primary-light, $primary-dark),
+  "link": ($link, $link-invert, $link-light, $link-dark),
+  "info": ($info, $info-invert, $info-light, $info-dark),
+  "success": ($success, $success-invert, $success-light, $success-dark),
+  "warning": ($warning, $warning-invert, $warning-light, $warning-dark),
+  "danger": ($danger, $danger-invert, $danger-light, $danger-dark)
+), $custom-colors);
+
+$shades: mergeColorMaps((
+  "black-bis": $black-bis,
+  "black-ter": $black-ter,
+  "grey-darker": $grey-darker,
+  "grey-dark": $grey-dark,
+  "grey": $grey,
+  "grey-light": $grey-light,
+  "grey-lighter": $grey-lighter,
+  "white-ter": $white-ter,
+  "white-bis": $white-bis
+), $custom-shades);
+
+// Defining size variables
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7;
 
+// Importing Bulma components and utilities
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../node_modules/bulma/sass/base/_all.sass";
 @import "../../node_modules/bulma/sass/elements/_all.sass";
@@ -53,8 +83,8 @@ $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7;
 @import "../../node_modules/bulma/sass/helpers/_all.sass";
 @import "../../node_modules/bulma/sass/layout/_all.sass";
 
+// Importing additional styles from your extensions
 @import "zeus-extension/shuffle-extension.scss";
 
-// Your styles
+// Your custom styles
 @import 'custom-styles';
-
