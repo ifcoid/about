@@ -20,7 +20,7 @@
     border-top-left-radius: $notification-border-top-left-radius;
     border-bottom-right-radius: $notification-border-bottom-right-radius;
     border-bottom-left-radius: $notification-border-bottom-left-radius;
-    
+
     @each $name, $pair in $notification-colors {
         &.is-#{$name} {
             @if $notification-color {
@@ -47,7 +47,7 @@
 .navbar-link {
     padding: $navbar-item-padding-y $navbar-item-padding-x;
     font-size: $navbar-item-font-size;
-    font-weight: $navbar-item-font-weight,
+    font-weight: $navbar-item-font-weight; // Perbaikan di sini, mengganti koma dengan titik koma
 }
 
 .is-absolute { position: absolute; }
