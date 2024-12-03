@@ -45,6 +45,15 @@
   <script src="js/main.js"></script>
   <script src="js/slider.js"></script>
 
+  <!-- style map -->
+  <style>
+    #listing-map {
+      width: 100%;
+      height: 500px;
+      margin-top: 20px;
+    }
+  </style>
+
   <link rel="icon" type="image/png" sizes="32x32" href="img/whitekotak.png">
 
   <!-- google analytic -->
@@ -703,8 +712,79 @@
             </div>
           </div>
         </div>
+
+        <!-- Elemen HTML untuk menampilkan peta -->
+        <div id="listing-map"></div>
         <p class="has-text-centered has-text-grey-dark">All rights reserved © PT. Informatika Digital Bisnis</p>
-      </div>
+
+        <script type="module">
+          import Map from "https://cdn.skypack.dev/ol/Map.js";
+          import View from "https://cdn.skypack.dev/ol/View.js";
+          import TileLayer from "https://cdn.skypack.dev/ol/layer/Tile.js";
+          import VectorLayer from "https://cdn.skypack.dev/ol/layer/Vector.js";
+          import VectorSource from "https://cdn.skypack.dev/ol/source/Vector.js";
+          import OSM from "https://cdn.skypack.dev/ol/source/OSM.js";
+          import { fromLonLat } from "https://cdn.skypack.dev/ol/proj.js";
+          import { Style, Icon } from "https://cdn.skypack.dev/ol/style.js";
+          import { Feature } from "https://cdn.skypack.dev/ol/index.js";
+          import Point from "https://cdn.skypack.dev/ol/geom/Point.js";
+
+          const attributions =
+            '<a href="https://petapedia.github.io/" target="_blank">&copy; PetaPedia Indonesia</a> ';
+
+          // Default lokasi awal peta (koordinat dalam EPSG:4326)
+          const defaultCoordinate = [-6.873826253734175, 107.57595777512786];
+          const mapCenter = fromLonLat(defaultCoordinate.reverse()); // Konversi ke EPSG:3857
+
+          // Layer dan sumber data untuk peta dasar
+          const basemap = new TileLayer({
+            source: new OSM({ attributions: attributions }),
+          });
+
+          // Konfigurasi tampilan awal peta
+          const defaultstartmap = new View({
+            center: mapCenter,
+            zoom: 16,
+          });
+
+          // Layer dan sumber data untuk marker
+          const markerSource = new VectorSource();
+          const markerLayer = new VectorLayer({
+            source: markerSource,
+            style: new Style({
+              image: new Icon({
+                src: "data:image/svg+xml;charset=utf-8," + encodeURIComponent(`
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                  <path fill="red" d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 10.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>`),
+                scale: 1,
+                anchor: [0.5, 1],
+              }),
+            }),
+          });
+
+          // Fungsi untuk menambahkan marker default
+          function addDefaultMarker() {
+            const marker = new Feature({
+              geometry: new Point(mapCenter),
+            });
+            markerSource.addFeature(marker);
+          }
+
+          // Inisialisasi peta
+          function displayMap() {
+            const map = new Map({
+              target: "listing-map",
+              layers: [basemap, markerLayer],
+              view: defaultstartmap,
+            });
+
+            // Tambahkan marker default ke peta
+            addDefaultMarker();
+          }
+
+          document.addEventListener("DOMContentLoaded", displayMap);
+        </script>
     </section>
   </div>
 </body>
