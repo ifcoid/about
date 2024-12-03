@@ -34,7 +34,7 @@ const closeButton = document.querySelector('.close-button');
 // Fungsi untuk membuka popup
 function openPopup() {
     popup.classList.add('active');
-}
+} 
 
 // Fungsi untuk menutup popup
 function closePopup() {

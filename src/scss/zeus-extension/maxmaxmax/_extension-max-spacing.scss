@@ -11,7 +11,7 @@
                 @each $direction, $suffix in $spacing-directions {
                     .-m#{$suffix}-#{$name} {
                         margin-#{$direction}: -#{$value}!important
-                    }
+                    } 
                 }
     
                 // Horizontal axis

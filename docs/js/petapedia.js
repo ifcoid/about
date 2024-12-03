@@ -124,4 +124,4 @@ export async function displayMap() {
       alert("Please click on the map first!");
     }
   }); 
-}
+} 
