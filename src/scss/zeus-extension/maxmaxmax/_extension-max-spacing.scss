@@ -5,7 +5,7 @@
                 // All directions
                 .-m-#{$name} {
                     margin: -#{$value} !important
-                }
+                } 
     
                 // Cardinal directions
                 @each $direction, $suffix in $spacing-directions {
