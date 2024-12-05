@@ -1,6 +1,6 @@
-// Menu Burger
+// Menunggu DOM selesai dimuat
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleksi elemen
+    // Seleksi elemen untuk menu burger
     const burgers = document.querySelectorAll('.navbar-menu-open');
     const menus = document.querySelectorAll('.navbar-side');
     const closes = document.querySelectorAll('.navbar-close');
@@ -11,42 +11,48 @@ document.addEventListener('DOMContentLoaded', () => {
         menus.forEach(menu => menu.classList.toggle('is-hidden'));
     };
 
-    // Buka menu ketika tombol burger diklik
+    // Tambahkan event listener untuk tombol burger
     burgers.forEach(burger => {
         burger.addEventListener('click', toggleMenuVisibility);
     });
 
-    // Tutup menu ketika tombol close diklik
+    // Tambahkan event listener untuk tombol close
     closes.forEach(close => {
         close.addEventListener('click', toggleMenuVisibility);
     });
 
-    // Tutup menu ketika backdrop diklik
+    // Tambahkan event listener untuk backdrop
     backdrops.forEach(backdrop => {
         backdrop.addEventListener('click', toggleMenuVisibility);
     });
-    
-});
-// Mendapatkan elemen popup dan tombol close
-const popup = document.querySelector('.popup');
-const closeButton = document.querySelector('.close-button');
 
-// Fungsi untuk membuka popup 
-function openPopup() {
-    popup.classList.add('active');
-} 
+    // Seleksi elemen popup dan tombol close
+    const popup = document.querySelector('.popup');
+    const closeButton = document.querySelector('.close-button');
 
-// Fungsi untuk menutup popup
-function closePopup() {
-    popup.classList.remove('active');
-}
-
-// Menutup popup saat tombol close diklik
-closeButton.addEventListener('click', closePopup);
-
-// Menutup popup saat menekan tombol Escape
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-        closePopup();
+    // Fungsi untuk membuka popup
+    function openPopup() {
+        if (popup) {
+            popup.classList.add('active');
+        }
     }
+
+    // Fungsi untuk menutup popup
+    function closePopup() {
+        if (popup) {
+            popup.classList.remove('active');
+        }
+    }
+
+    // Tambahkan event listener untuk tombol close popup
+    if (closeButton) {
+        closeButton.addEventListener('click', closePopup);
+    }
+
+    // Menutup popup saat menekan tombol Escape
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closePopup();
+        }
+    });
 });
