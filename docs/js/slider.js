@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevSlideButton = document.getElementById('prevSlide');
     let currentSlide = 0;
 
-    // Show slide at specific index
+    // Show slide at specific index 
     const showSlide = (index) => {
         slides.forEach((slide, i) => {
             slide.classList.toggle('is-active', i === index);
