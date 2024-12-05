@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const popup = document.querySelector('.popup');
 const closeButton = document.querySelector('.close-button');
 
-// Fungsi untuk membuka popup
+// Fungsi untuk membuka popup 
 function openPopup() {
     popup.classList.add('active');
 } 
