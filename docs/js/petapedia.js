@@ -123,5 +123,5 @@ export async function displayMap() {
     } else {
       alert("Please click on the map first!");
     }
-  }); 
+  });  
 } 
