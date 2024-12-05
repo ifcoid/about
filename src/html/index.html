@@ -8,103 +8,73 @@
     <link rel="stylesheet" href="css/bulma/bulma.min.css">
     <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-bulma.png">
     <script src="js/main.js"></script>
+    <script src="style.css"></script>
 </head>
     <body>
     <div class="">
-                        
+    
       <div class="pb-20">
         <nav class="navbar py-5">
-          <div class="container is-fluid">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="#">
-                <span class="navbar-item px-0 title is-5 has-text-dark">
-                  <img src="zeus-assets/logo/logo-zeus-red.svg" alt="" style="height: 28px;" width="auto">
-                </span>
-              </a>
-              <a class="navbar-menu-open navbar-burger" role="button" type="button" data-toggle="side-menu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-            <div class="navbar-menu">
-              <div class="navbar-end">
-                <ul class="navbar-item">
-                  <li><a class="navbar-item" href="#">About</a></li>
-                  <li><a class="navbar-item" href="#">Company</a></li>
-                  <li><a class="navbar-item" href="#">Services</a></li>
-                  <li><a class="navbar-item" href="#">Testimonials</a></li>
-                </ul>
-                <div class="navbar-item is-hidden-mobile pl-0"><a class="button is-primary has-background-danger-light has-text-danger" href="#">Contact Us</a></div>
-              </div>
-            </div>
-          </div>
+          <!-- Navbar content -->
         </nav>
+      
         <section class="section pb-0">
           <div class="container">
             <div class="columns is-vcentered">
               <div class="column is-7 mb-5 mb-0-desktop">
-                <span class="is-size-7"><small class="has-text-info has-text-weight-semibold">What's new at IF</small></span>
-                <h2 class="has-mw-xl mt-8 mb-8 mb-12-desktop title is-1 is-size-2-mobile">Take care of your performance every day.</h2>
-                <p class="has-mw-lg mb-8 mb-12-desktop is-size-5 has-text-grey-dark">Build a well-presented apps that everyone will love. Take care to develop resources continually and integrity them with previous projects.</p>
-                <div class="buttons">
-      <a class="button is-primary" href="#">Track your performance</a><a class="button is-outlined is-light has-text-dark" href="#">Learn More</a>
-      </div>
-              </div>
-              <div class="is-relative column is-5">
-                <img class="is-relative image" src="zeus-assets/images/z-picture.png" alt="">
-                <img class="is-absolute is-top-0 is-right-0 mt-24 is-hidden-touch" src="zeus-assets/icons/dots/yellow-dot-right-shield.svg" alt="">
-                <img class="is-absolute is-left-0 is-bottom-0 mb-24" src="zeus-assets/icons/dots/blue-dot-left-bars.svg" alt="">
+                <!-- Content -->
+                <div class="your-box-selector" style="border: 1px solid #ccc; padding: 20px; cursor: pointer;">
+                  Hover over me!
+                </div>
               </div>
             </div>
           </div>
         </section>
-        <div class="is-hidden navbar-side is-fixed is-top-0 is-bottom-0 is-left-0 has-mw-md" style="width: 75%; z-index: 9999;">
-          <div class="navbar-backdrop is-fixed is-inset-0 has-background-dark" style="opacity: 75%; z-index: 50;"></div>
-          <aside class="menu is-relative is-flex is-flex-direction-column py-6 px-6 has-background-white" style="width: 100%; height: 100%; z-index: 50; overflow-y: auto;">
-            <div class="is-flex is-align-items-center mb-10">
-              <a class="mr-auto mb-0" href="#">
-                <span class="navbar-item px-0 title is-5 has-text-dark">
-                  <img src="zeus-assets/logo/logo-zeus-red.svg" alt="" style="height: 28px;" width="auto">
-                </span>
-              </a>
-              <button class="navbar-close button is-text p-0 mb-2" type="button" aria-label="Close">
-                <svg style="width: 18px; height: 18px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
-            </div>
-            <ul class="menu-list is-size-7">
-              <li class="mb-2"><a href="#">About</a></li>
-              <li class="mb-2"><a href="#">Company</a></li>
-              <li class="mb-2"><a href="#">Services</a></li>
-              <li class="mb-2"><a href="#">Testimonials</a></li>
-            </ul>
-            <div class="mt-auto">
-              <div class="py-6"><a class="button is-primary is-fullwidth" href="#">Contact Us</a></div>
-              <p class="mb-4 has-text-centered has-text-grey-dark">
-                <span>© 2021 All rights reserved.</span>
-              </p>
-            </div>
-          </aside>
+      
+        <div id="popup" class="popup is-hidden">
+          <p>Ini adalah informasi tambahan tentang kotak ini!</p>
+          <button id="close-popup" class="button is-small">Tutup</button>
         </div>
       </div>
-                        
-      <section class="is-relative section py-20 py-40-desktop" style="overflow: hidden;">
-        <img class="is-absolute is-left-0 is-top-0 mt-24 is-hidden-touch" src="zeus-assets/icons/dots/blue-dot-left-bars.svg" alt="">
-        <img class="is-absolute is-right-0 is-top-0 mt-52 is-hidden-touch" src="zeus-assets/icons/dots/yellow-dot-right-shield.svg" alt="">
-        <div class="container">
-          <div class="has-mw-3xl mx-auto has-text-centered">
-            <span class="is-size-7"><small class="has-text-info has-text-weight-semibold">What's new at IF</small></span>
-            <h2 class="mt-8 mb-10 title is-2">Take quick action that increases your brand's regular profit.</h2>
-            <p class="mb-12 is-size-5 has-text-grey-dark">If you have ever wondered how to develop your brand, this is the place for you. Take a big step forward in growing your business with this great tool.</p>
-            <div class="buttons is-centered">
-      <a class="button is-primary" href="#">Activate Demo</a><a class="button is-dark is-outlined" href="#">Share with friends</a>
-      </div>
-          </div>
-        </div>
-      </section>
-                        
+      
+      <style>
+      .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+      
+      .is-hidden {
+        display: none;
+      }
+      </style>
+      
+      <script>
+      const popup = document.getElementById('popup');
+      const closePopup = document.getElementById('close-popup');
+      
+      // Menampilkan pop-up saat kursor mengenai kotak
+      document.querySelector('.your-box-selector').addEventListener('mouseenter', () => {
+        popup.classList.remove('is-hidden');
+      });
+      
+      // Menyembunyikan pop-up saat kursor keluar dari kotak
+      document.querySelector('.your-box-selector').addEventListener('mouseleave', () => {
+        popup.classList.add('is-hidden');
+      });
+      
+      // Menyembunyikan pop-up saat tombol tutup diklik
+      closePopup.addEventListener('click', () => {
+        popup.classList.add('is-hidden');
+      });
+      </script>
+                       
       <section class="section py-20">
         <div class="container">
           <div class="columns is-multiline -mb-6">
