@@ -38,7 +38,7 @@
     "url": "https://github.com/username/repo.git"
   },
   "keywords": [
-    "web",
+    "web", 
     "bulma",
     "browser-sync",
     "development"
